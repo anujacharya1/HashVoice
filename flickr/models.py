@@ -7,8 +7,6 @@ class UserManager(models.Manager):
     def get_or_create_user(self, flickrId, username):
         error= None
         try:
-            # user is the person
-            # Person(id='103509102@N04', username='anujacharya1')
             user, created = self.get_or_create(flickrId=flickrId,username=username)
         except ObjectDoesNotExist:
             error = 'UserNotFound'
