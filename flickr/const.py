@@ -25,6 +25,7 @@ class Const():
     
     #photo/tags
     cPHOTO = 'photo'
+    cUID = 'uid'
     cTAGS = 'tags'
     
     

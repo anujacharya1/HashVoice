@@ -61,10 +61,11 @@ def handle_uploaded_file(f,fname):
 @csrf_exempt                
 def photos(request):
     try:
+        val = request.POST.get(Const.cUID)
         fi.set_auth_handler(Const.cFILENAME)
         user = fi.test.login()
         photo = request.FILES.get('image')
-        photoName = photo.name
+        photoName = val+photo.name
         handle_uploaded_file(photo,photoName)
         tags = request.POST.get(Const.cTAGS)
         tag = tags.split('%2C')
@@ -102,15 +103,18 @@ def photoSearch(request, tag=None):
     
     if result[Const.cRESPONSE]:
         imagesList = result[Const.cMODEL]
+        print imagesList
     
     mainImageList = list()
     for i in imagesList:
         iTemp  =i.split('/')
         iTempLen = len(iTemp)
+        print imagesList
         
         mainImageList.append(iTemp[iTempLen-1])
   
     to_json = {Const.cPHOTO : str(mainImageList) }
+    print to_json
 
     return HttpResponse(json.dumps(to_json), mimetype='application/json')
 
