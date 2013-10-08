@@ -24,7 +24,8 @@ from models import Photo,User
  
 def index(request):
     fi.set_keys(api_key = settings.FLICKR_API_KEY, api_secret = settings.FLICKR_API_SECRET)
-    a = fi.auth.AuthHandler(callback=Const.cPORT_TUNNEL+'flickr/callback')
+    # This need to change after we deploy it on the external server
+    a = fi.auth.AuthHandler(callback=Const.cPORT_LOCAL+'flickr/callback')
     perms = "delete"
     url = a.get_authorization_url(perms)
     request.session['a'] = a

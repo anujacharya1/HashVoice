@@ -15,3 +15,10 @@ Demo Code:
 
 
 Client (Android Application) :https://github.com/psiddh/HashVoice/tree/master
+
+=========
+Steps to run:
+
+1) run django sync db
+2) Follow API doc 
+https://github.com/anujacharya1/HashVoice/wiki/API-Documentation
