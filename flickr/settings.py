@@ -155,6 +155,6 @@ LOGGING = {
 }
 
 
-
+# I am not STUPID this is FAKE, create your own
 FLICKR_API_KEY     = 'a364132652dae34054b41ecebc863c07'
 FLICKR_API_SECRET  = '0bf9dc74fa98832d'
